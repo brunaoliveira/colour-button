@@ -14,6 +14,9 @@ function App() {
       >
         Change to {newButtoncolor}
       </button>
+      <div>
+        <input type="checkbox"/>
+      </div>
     </div>
   );
 }
