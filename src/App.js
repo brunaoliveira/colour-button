@@ -3,14 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [buttoncolor, setButtoncolor] = useState("red");
+  const [buttonColor, setButtoncolor] = useState("red");
   const [disabled, setDisabled] = useState(false);
-  const newButtoncolor = buttoncolor === "red" ? "blue" : "red";
+  const newButtoncolor = buttonColor === "red" ? "blue" : "red";
 
   return (
     <div className="App">
       <button
-        style={{ backgroundColor: buttoncolor }}
+        style={{ backgroundColor: disabled ? "gray" : buttonColor }}
         onClick={() => setButtoncolor(newButtoncolor)}
         disabled={disabled}
       >
