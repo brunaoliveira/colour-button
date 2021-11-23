@@ -2,10 +2,14 @@ import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+export function replaceCamelCaseWithSpaces(colorName) {
+  return colorName.replace(/\B([A-Z])\B/g, " $1");
+}
+
 function App() {
-  const [buttonColor, setButtoncolor] = useState("red");
+  const [buttonColor, setButtoncolor] = useState("MediumVioletRed");
   const [disabled, setDisabled] = useState(false);
-  const newButtoncolor = buttonColor === "red" ? "blue" : "red";
+  const newButtoncolor = buttonColor === "MediumVioletRed" ? "MidnightBlue" : "MediumVioletRed";
 
   return (
     <div className="App">
@@ -14,7 +18,7 @@ function App() {
         onClick={() => setButtoncolor(newButtoncolor)}
         disabled={disabled}
       >
-        Change to {newButtoncolor}
+        Change to {replaceCamelCaseWithSpaces(newButtoncolor)}
       </button>
       <div>
         <input
